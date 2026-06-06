@@ -53,8 +53,4 @@ theme "catppuccin-mocha"
 
 설정 파일을 저장하고 Zellij를 다시 실행하거나, 실행 중인 상태에서 `Ctrl + o` -> `r`을 눌러 설정을 새로고침하면 바로 적용됩니다.
 
-#### 3. Zellij 프롬프트와 폰트
-
-Catppuccin 테마의 진가는 화살표 모양 같은 특수 아이콘들이 깨지지 않고 잘 보일 때 드러납니다.
-터미널 글꼴을 **ZedMono Nerd Font**나 **JetBrainsMono Nerd Font** 같은 **Nerd Font계열**로 설정해 두시면 테마가 훨씬 더 예쁘게 보입니다!
 
