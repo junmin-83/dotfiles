@@ -10,7 +10,7 @@ keybinds clear-defaults=true {
 
     // 2. Locked 모드에서 Zellij를 깨우는 키를 'Ctrl x'로 변경합니다.
     locked {
-        bind "Ctrl g" { SwitchToMode "normal"; }
+        bind "Ctrl x" { SwitchToMode "normal"; }
     }
 
     // 3. Normal 모드 진입 후, 한 번 더 'Ctrl x'를 누르면 
