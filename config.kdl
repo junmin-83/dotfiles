@@ -3,9 +3,22 @@
 //
 
 keybinds clear-defaults=true {
+    // 1. 기존의 Normal 모드 바인딩(Ctrl + g)을 완전히 해제(unbind)합니다.
+    normal {
+        unbind "Ctrl g"
+    }
+
+    // 2. Locked 모드에서 Zellij를 깨우는 키를 'Ctrl x'로 변경합니다.
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
+
+    // 3. Normal 모드 진입 후, 한 번 더 'Ctrl x'를 누르면 
+    // Emacs 같은 내부 어플리케이션으로 'Ctrl x' 신호가 정상 전달되도록 합니다.
+    shared_except "Locked" {
+        bind "Ctrl x" { WriteChars "\u0018"; SwitchToMode "Locked"; }
+    }
+
     pane {
         bind "left" { MoveFocus "left"; }
         bind "down" { MoveFocus "down"; }
