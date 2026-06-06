@@ -16,7 +16,7 @@ keybinds clear-defaults=true {
     // 3. Normal 모드 진입 후, 한 번 더 'Ctrl x'를 누르면 
     // Emacs 같은 내부 어플리케이션으로 'Ctrl x' 신호가 정상 전달되도록 합니다.
     shared_except "Locked" {
-        bind "Ctrl x" { WriteChars "\u0018"; SwitchToMode "Locked"; }
+        bind "Ctrl x" { SwitchToMode "Locked"; }
     }
 
     pane {
