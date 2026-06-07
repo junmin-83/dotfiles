@@ -1,5 +1,5 @@
 [terminal]
-shell = { program = "pwsh.exe" }
+shell = { program = "pwsh.exe" , args = ["-NoLogo", "-NoExit", "-Command", "Invoke-Expression (& { $PROFILE })"] }
 
 [font]
 normal = { family = "ZedMono Nerd Font", style = "Regular" }
