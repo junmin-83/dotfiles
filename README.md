@@ -45,7 +45,7 @@ Install-Module -Name Microsoft.WinGet.CommandNotFound
 Import-Module -Name Microsoft.WinGet.CommandNotFound
 
 # Oh My Posh 초기화 및 테마 적용
-oh-my-posh init pwsh --config amro | Invoke-Expression
+oh-my-posh init pwsh --config catppuccin_mocha | Invoke-Expression
 # oh-my-posh init pwsh --config atomic | Invoke-Expression
 # oh-my-posh init pwsh --config easy-term | Invoke-Expression
 # oh-my-posh init pwsh --config jandedobbeleer | Invoke-Expression
