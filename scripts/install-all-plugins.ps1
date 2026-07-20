@@ -2,13 +2,11 @@
 # 사용법: irm <raw URL> | iex
 
 $Marketplaces = @(
-    "obra/superpowers-marketplace",
     "Yeachan-Heo/oh-my-claudecode",
     "Imbad0202/academic-research-skills"
 )
 
 $Plugins = @(
-    "superpowers@superpowers-marketplace",
     "oh-my-claudecode@omc",
     "academic-research-skills@academic-research-skills"
 )
@@ -20,7 +18,7 @@ if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
 
 Write-Host "Marketplace registering..." -ForegroundColor Cyan
 foreach ($m in $Marketplaces) {
-    claude plugin marketplace add $m --scope user
+    claude plugin marketplace add $m
     if ($LASTEXITCODE -eq 0) {
         Write-Host "  OK: $m" -ForegroundColor Green
     } else {
@@ -31,7 +29,7 @@ foreach ($m in $Marketplaces) {
 Write-Host ""
 Write-Host "Plugin installing..." -ForegroundColor Cyan
 foreach ($p in $Plugins) {
-    claude plugin install $p --scope user
+    claude plugin install $p
     if ($LASTEXITCODE -eq 0) {
         Write-Host "  OK: $p" -ForegroundColor Green
     } else {
@@ -62,13 +60,13 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
         }
     }
     if (Test-Path $FablizeDir) {
-        claude plugin marketplace add $FablizeDir --scope user
+        claude plugin marketplace add $FablizeDir
         if ($LASTEXITCODE -eq 0) {
             Write-Host "  OK: fablize marketplace" -ForegroundColor Green
         } else {
             Write-Host "  SKIP: fablize marketplace (already registered or error)" -ForegroundColor Yellow
         }
-        claude plugin install fablize@fablize --scope user
+        claude plugin install fablize@fablize
         if ($LASTEXITCODE -eq 0) {
             Write-Host "  OK: fablize installed" -ForegroundColor Green
         } else {

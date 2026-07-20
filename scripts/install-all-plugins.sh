@@ -4,13 +4,11 @@
 set -uo pipefail   # set -e는 쓰지 않음: 이미 설치된 항목에서 멈추지 않도록
 
 MARKETPLACES=(
-  "obra/superpowers-marketplace"
   "Yeachan-Heo/oh-my-claudecode"
   "Imbad0202/academic-research-skills"
 )
 
 PLUGINS=(
-  "superpowers@superpowers-marketplace"
   "oh-my-claudecode@omc"
   "academic-research-skills@academic-research-skills"
 )
@@ -22,7 +20,7 @@ fi
 
 echo " Marketplace 등록 중..."
 for m in "${MARKETPLACES[@]}"; do
-  if claude plugin marketplace add "$m" --scope user; then
+  if claude plugin marketplace add "$m"; then
     echo "   $m"
   else
     echo "   $m (건너뜀  이미 등록되었거나 오류)"
@@ -32,7 +30,7 @@ done
 echo ""
 echo " Plugin 설치 중..."
 for p in "${PLUGINS[@]}"; do
-  if claude plugin install "$p" --scope user; then
+  if claude plugin install "$p"; then
     echo "   $p"
   else
     echo "   $p (건너뜀  이미 설치되었거나 오류)"
@@ -60,12 +58,12 @@ else
     fi
   fi
   if [ -d "$FABLIZE_DIR" ]; then
-    if claude plugin marketplace add "$FABLIZE_DIR" --scope user; then
+    if claude plugin marketplace add "$FABLIZE_DIR"; then
       echo "  ✓ fablize marketplace 등록"
     else
       echo "  ⚠ fablize marketplace (건너뜀 — 이미 등록되었거나 오류)"
     fi
-    if claude plugin install fablize@fablize --scope user; then
+    if claude plugin install fablize@fablize; then
       echo "  ✓ fablize 설치"
     else
       echo "  ⚠ fablize install (건너뜀 — 이미 설치되었거나 오류)"
