@@ -14,8 +14,7 @@ $Plugins = @(
     "oh-my-claudecode@omc",
     "academic-research-skills@academic-research-skills",
     "context-engineering@context-engineering-marketplace",
-    "document-skills@anthropic-agent-skills",
-    "example-skills@anthropic-agent-skills"
+    "document-skills@anthropic-agent-skills"
 )
 
 if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {

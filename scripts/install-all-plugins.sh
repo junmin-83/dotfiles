@@ -17,7 +17,6 @@ PLUGINS=(
   "academic-research-skills@academic-research-skills"
   "context-engineering@context-engineering-marketplace"
   "document-skills@anthropic-agent-skills"
-  "example-skills@anthropic-agent-skills"
 )
 
 if ! command -v claude &> /dev/null; then

@@ -43,7 +43,7 @@ irm https://raw.githubusercontent.com/junmin-83/dotfiles/claudecode/scripts/inst
 | oh-my-claudecode (OMC) | 멀티에이전트 orchestration, 자율 실행 |
 | academic-research-skills (ARS) | 문헌조사→집필→리뷰→수정 학술 파이프라인 |
 | Context Engineering | context 관리/압축 전략 (15개 skill) |
-| Anthropic Official Skills (document-skills / example-skills) | 문서 처리, 예제 skill |
+| Anthropic Official Skills (document-skills) | 문서 처리 skill |
 
 > **Scientific Agent Skills는 포함되지 않습니다.** Claude Code plugin 생태계가 아니라 별도의 Agent Skills 표준(`npx`)을 쓰기 때문입니다. 필요한 프로젝트에서 직접 실행하세요:
 > ```bash
