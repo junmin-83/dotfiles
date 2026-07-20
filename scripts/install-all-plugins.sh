@@ -8,7 +8,6 @@ MARKETPLACES=(
   "Yeachan-Heo/oh-my-claudecode"
   "Imbad0202/academic-research-skills"
   "muratcankoylan/Agent-Skills-for-Context-Engineering"
-  "anthropics/skills"
 )
 
 PLUGINS=(
@@ -16,7 +15,6 @@ PLUGINS=(
   "oh-my-claudecode@omc"
   "academic-research-skills@academic-research-skills"
   "context-engineering@context-engineering-marketplace"
-  "document-skills@anthropic-agent-skills"
 )
 
 if ! command -v claude &> /dev/null; then

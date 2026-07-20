@@ -5,16 +5,14 @@ $Marketplaces = @(
     "obra/superpowers-marketplace",
     "Yeachan-Heo/oh-my-claudecode",
     "Imbad0202/academic-research-skills",
-    "muratcankoylan/Agent-Skills-for-Context-Engineering",
-    "anthropics/skills"
+    "muratcankoylan/Agent-Skills-for-Context-Engineering"
 )
 
 $Plugins = @(
     "superpowers@superpowers-marketplace",
     "oh-my-claudecode@omc",
     "academic-research-skills@academic-research-skills",
-    "context-engineering@context-engineering-marketplace",
-    "document-skills@anthropic-agent-skills"
+    "context-engineering@context-engineering-marketplace"
 )
 
 if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {
