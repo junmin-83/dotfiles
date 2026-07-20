@@ -40,6 +40,23 @@ foreach ($p in $Plugins) {
 }
 
 Write-Host ""
+Write-Host "Applying Karpathy CLAUDE.md (user-level)..." -ForegroundColor Cyan
+$ClaudeDir = Join-Path $HOME ".claude"
+$ClaudeMdPath = Join-Path $ClaudeDir "CLAUDE.md"
+New-Item -ItemType Directory -Force -Path $ClaudeDir | Out-Null
+if ((Test-Path $ClaudeMdPath) -and (Select-String -Path $ClaudeMdPath -Pattern "andrej-karpathy-skills" -Quiet -ErrorAction SilentlyContinue)) {
+    Write-Host "  SKIP: Karpathy CLAUDE.md (already added)" -ForegroundColor Yellow
+} else {
+    try {
+        $karpathyContent = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md"
+        Add-Content -Path $ClaudeMdPath -Value "`n<!-- source: andrej-karpathy-skills -->`n$karpathyContent"
+        Write-Host "  OK: Karpathy CLAUDE.md -> $ClaudeMdPath" -ForegroundColor Green
+    } catch {
+        Write-Host "  SKIP: Karpathy CLAUDE.md (download failed)" -ForegroundColor Yellow
+    }
+}
+
+Write-Host ""
 Write-Host "Done." -ForegroundColor Green
 Write-Host "Scientific Agent Skills is a separate ecosystem - install per project when needed:"
 Write-Host "  npx skills add K-Dense-AI/scientific-agent-skills"

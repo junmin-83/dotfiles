@@ -40,6 +40,21 @@ for p in "${PLUGINS[@]}"; do
 done
 
 echo ""
+echo "▶ Karpathy CLAUDE.md 적용 중 (user-level, ~/.claude/CLAUDE.md)..."
+CLAUDE_MD="$HOME/.claude/CLAUDE.md"
+mkdir -p "$HOME/.claude"
+if [ -f "$CLAUDE_MD" ] && grep -q "andrej-karpathy-skills" "$CLAUDE_MD" 2>/dev/null; then
+  echo "  ⚠ Karpathy CLAUDE.md (건너뜀 — 이미 추가됨)"
+else
+  {
+    echo ""
+    echo "<!-- source: andrej-karpathy-skills -->"
+    curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
+  } >> "$CLAUDE_MD"
+  echo "  ✓ Karpathy CLAUDE.md → $CLAUDE_MD"
+fi
+
+echo ""
 echo " 완료."
 echo " Scientific Agent Skills는 별도 생태계라 이 스크립트에 포함되지 않습니다. 필요한 프로젝트에서 직접 실행하세요:"
 echo "   npx skills add K-Dense-AI/scientific-agent-skills"

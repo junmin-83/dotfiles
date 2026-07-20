@@ -43,6 +43,8 @@ irm https://raw.githubusercontent.com/junmin-83/dotfiles/claudecode/scripts/inst
 | oh-my-claudecode (OMC) | 멀티에이전트 orchestration, 자율 실행 |
 | academic-research-skills (ARS) | 문헌조사→집필→리뷰→수정 학술 파이프라인 |
 
+또한 스크립트는 [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)의 `CLAUDE.md`(LLM 코딩 실수를 줄이는 행동 가이드라인)를 user-level `~/.claude/CLAUDE.md`에 append 합니다. 이 파일은 모든 프로젝트의 Claude Code 세션에 적용됩니다. `<!-- source: andrej-karpathy-skills -->` 마커로 중복 추가를 방지하므로 여러 번 실행해도 안전합니다.
+
 > **Scientific Agent Skills는 포함되지 않습니다.** Claude Code plugin 생태계가 아니라 별도의 Agent Skills 표준(`npx`)을 쓰기 때문입니다. 필요한 프로젝트에서 직접 실행하세요:
 > ```bash
 > npx skills add K-Dense-AI/scientific-agent-skills
