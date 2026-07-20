@@ -104,5 +104,4 @@ powershell -ExecutionPolicy Bypass -File install-all-plugins.ps1
 
 ## 참고
 
-- 각 marketplace/plugin의 상세 배경, 신뢰도, per-project 템플릿 구성 방법은 `claude-code-existing-plugins-install-guide.md`(전체 매뉴얼) 참고
 - 커뮤니티 plugin은 이름/버전이 바뀔 수 있으므로, 스크립트가 실패하면 해당 GitHub repo를 먼저 확인하세요
