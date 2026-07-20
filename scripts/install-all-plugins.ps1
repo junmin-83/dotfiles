@@ -40,6 +40,45 @@ foreach ($p in $Plugins) {
 }
 
 Write-Host ""
+Write-Host "Installing fablize plugin locally (git clone -> local marketplace)..." -ForegroundColor Cyan
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Host "  SKIP: fablize (git is required)" -ForegroundColor Yellow
+} else {
+    $FablizeDir = Join-Path $HOME ".claude\local-plugins\fablize"
+    if (Test-Path (Join-Path $FablizeDir ".git")) {
+        git -C $FablizeDir pull --ff-only
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "  OK: fablize repo updated" -ForegroundColor Green
+        } else {
+            Write-Host "  WARN: fablize pull failed (using existing)" -ForegroundColor Yellow
+        }
+    } else {
+        New-Item -ItemType Directory -Force -Path (Split-Path $FablizeDir) | Out-Null
+        git clone --depth 1 https://github.com/fivetaku/fablize.git $FablizeDir
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "  OK: fablize repo cloned" -ForegroundColor Green
+        } else {
+            Write-Host "  WARN: fablize clone failed" -ForegroundColor Yellow
+        }
+    }
+    if (Test-Path $FablizeDir) {
+        claude plugin marketplace add $FablizeDir --scope user
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "  OK: fablize marketplace" -ForegroundColor Green
+        } else {
+            Write-Host "  SKIP: fablize marketplace (already registered or error)" -ForegroundColor Yellow
+        }
+        claude plugin install fablize@fablize --scope user
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "  OK: fablize installed" -ForegroundColor Green
+        } else {
+            Write-Host "  SKIP: fablize (already installed or error)" -ForegroundColor Yellow
+        }
+        Write-Host "  INFO: to keep rules always-on (optional): bash `"$FablizeDir/setup/setup.sh`"" -ForegroundColor Gray
+    }
+}
+
+Write-Host ""
 Write-Host "Applying Karpathy CLAUDE.md (user-level)..." -ForegroundColor Cyan
 $ClaudeDir = Join-Path $HOME ".claude"
 $ClaudeMdPath = Join-Path $ClaudeDir "CLAUDE.md"

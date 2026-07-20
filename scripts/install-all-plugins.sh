@@ -40,6 +40,41 @@ for p in "${PLUGINS[@]}"; do
 done
 
 echo ""
+echo "▶ fablize plugin 로컬 설치 중 (git clone → 로컬 marketplace)..."
+if ! command -v git &> /dev/null; then
+  echo "  ⚠ fablize (건너뜀 — git이 필요합니다)"
+else
+  FABLIZE_DIR="$HOME/.claude/local-plugins/fablize"
+  if [ -d "$FABLIZE_DIR/.git" ]; then
+    if git -C "$FABLIZE_DIR" pull --ff-only; then
+      echo "  ✓ fablize 저장소 업데이트"
+    else
+      echo "  ⚠ fablize pull 실패 (기존 버전 사용)"
+    fi
+  else
+    mkdir -p "$(dirname "$FABLIZE_DIR")"
+    if git clone --depth 1 https://github.com/fivetaku/fablize.git "$FABLIZE_DIR"; then
+      echo "  ✓ fablize 저장소 clone"
+    else
+      echo "  ⚠ fablize clone 실패"
+    fi
+  fi
+  if [ -d "$FABLIZE_DIR" ]; then
+    if claude plugin marketplace add "$FABLIZE_DIR" --scope user; then
+      echo "  ✓ fablize marketplace 등록"
+    else
+      echo "  ⚠ fablize marketplace (건너뜀 — 이미 등록되었거나 오류)"
+    fi
+    if claude plugin install fablize@fablize --scope user; then
+      echo "  ✓ fablize 설치"
+    else
+      echo "  ⚠ fablize install (건너뜀 — 이미 설치되었거나 오류)"
+    fi
+    echo "  ℹ 규칙을 항상 로드하려면(선택): bash \"$FABLIZE_DIR/setup/setup.sh\""
+  fi
+fi
+
+echo ""
 echo "▶ Karpathy CLAUDE.md 적용 중 (user-level, ~/.claude/CLAUDE.md)..."
 CLAUDE_MD="$HOME/.claude/CLAUDE.md"
 mkdir -p "$HOME/.claude"

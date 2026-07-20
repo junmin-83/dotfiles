@@ -42,6 +42,11 @@ irm https://raw.githubusercontent.com/junmin-83/dotfiles/claudecode/scripts/inst
 | Superpowers | TDD·디버깅·브레인스토밍 방법론, 범용 개발 |
 | oh-my-claudecode (OMC) | 멀티에이전트 orchestration, 자율 실행 |
 | academic-research-skills (ARS) | 문헌조사→집필→리뷰→수정 학술 파이프라인 |
+| [fablize](https://github.com/fivetaku/fablize) | Opus가 "완료·증거·검증을 절차로" 수행하도록 강제하는 harness |
+
+위 세 개(Superpowers·OMC·ARS)는 GitHub marketplace에서 바로 설치하지만, **fablize는 로컬로 설치**합니다. 스크립트가 `~/.claude/local-plugins/fablize`에 저장소를 `git clone`(이미 있으면 `git pull`)한 뒤, 그 로컬 경로를 marketplace로 등록하고 `fablize@fablize`를 설치합니다. 로컬에 두면 항상-켜짐 설정 스크립트(`setup/setup.sh`)를 알려진 경로에서 실행할 수 있습니다. 이 과정에는 `git`이 필요하며, 없으면 fablize 단계만 건너뜁니다.
+
+> 규칙을 모든 세션에 상시 로드하려면(선택) 한 번 실행하세요: `bash ~/.claude/local-plugins/fablize/setup/setup.sh`
 
 또한 스크립트는 [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)의 `CLAUDE.md`(LLM 코딩 실수를 줄이는 행동 가이드라인)를 user-level `~/.claude/CLAUDE.md`에 append 합니다. 이 파일은 모든 프로젝트의 Claude Code 세션에 적용됩니다. `<!-- source: andrej-karpathy-skills -->` 마커로 중복 추가를 방지하므로 여러 번 실행해도 안전합니다.
 
