@@ -1,0 +1,27 @@
+# PowerShell 7 (pwsh)
+command = pwsh.exe
+
+# 테마 설정 
+theme = catppuccin-mocha
+
+# 폰트 설정 
+font-family = "ZedMono Nerd Font"
+font-family = "JetBrainsMono Nerd Font"
+font-family = "D2Coding"
+font-size = 11
+
+# 배경 투명도 및 블러 효과 (Windows 11 이상 권장)
+background-opacity = 1.0
+background-blur-radius = 20
+
+# 초기 창 크기 (단위: 문자 그리드 수 / 가로 열 x 세로 줄)
+# 두 값이 모두 지정되어야 적용됩니다.
+window-width = 128
+window-height = 64
+
+# 창 패딩 (테두리와 텍스트 사이 여백)
+window-padding-x = 10
+window-padding-y = 10
+
+# 초기 시작 경로
+working-directory = "D:\project"
