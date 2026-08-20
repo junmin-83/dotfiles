@@ -14,7 +14,7 @@ import = [
     "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\catppuccin-mocha.toml"
 #    "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\everforest_dark.toml"
 ]
-working_directory = "d:\\Programming\\"
+working_directory = "d:\\Project\\"
 
 [window]
 dimensions = { columns = 120, lines = 35 }
