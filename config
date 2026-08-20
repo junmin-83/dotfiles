@@ -8,9 +8,9 @@ theme = catppuccin-mocha
 font-family = "ZedMono Nerd Font"
 font-family = "JetBrainsMono Nerd Font"
 font-family = "D2Coding"
-dpi-aware = "system"
+font-thicken = true
 font-size = 12.0
-resize-on-dpi-change = "none"
+resize-on-dpi-change = "all"
 
 # 배경 투명도 및 블러 효과 (Windows 11 이상 권장)
 background-opacity = 1.0
