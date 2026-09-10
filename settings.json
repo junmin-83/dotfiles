@@ -4,5 +4,12 @@
   "term:fontfamily": "'ZedMono Nerd Font Mono','D2Coding'",
   "term:fontsize": 16,
   "editor:fontfamily": "'ZedMono Nerd Font Mono','D2Coding'",
-  "editor:fontsize": 16
+  "editor:fontsize": 16,
+  "agent": {
+    "enabled": true,
+    "model": "auto",
+    "api_key_env": "freellmapi-fd68c2962431d529cbf80f1413a626799f5ef053c00d3eb9",
+    "auto_start": true,
+    "log_file": "c:/Users/junmi/.config/waveterm/waveterm_agent.log"
+  }
 }
