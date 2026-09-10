@@ -1,0 +1,24 @@
+{
+  "AI-Workstations": [
+    {
+      "host": "100.65.249.70",
+      "id": "teratec-ai",
+      "identityFile": "~/.ssh/surface_private.key",
+      "type": "ssh",
+      "user": "jmkim"
+    },
+    {
+      "host": "100.82.202.2",
+      "id": "strange-ai",
+      "identityFile": "~/.ssh/surface_private.key",
+      "type": "ssh",
+      "user": "jmkim"
+    }
+  ],
+  "jmkim@strange-ai": {
+    "conn:wshenabled": true
+  },
+  "jmkim@teratec-ai": {
+    "conn:wshenabled": true
+  }
+}

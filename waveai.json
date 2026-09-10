@@ -1,0 +1,17 @@
+{
+  "freellmapi": {
+    "display:name": "FreeLLM API",
+    "display:order": 1,
+    "display:icon": "server",
+    "display:description": "OpenAI-compatible BYOK endpoint via FreeLLMAPI",
+    "ai:provider": "custom",
+    "ai:apitype": "openai-chat",
+    "ai:model": "auto",
+    "ai:thinkinglevel": "high",
+    "ai:endpoint": "http://100.97.82.57:3001/v1/chat/completions",
+    "ai:apitoken": "freellmapi-fd68c2962431d529cbf80f1413a626799f5ef053c00d3eb9",
+    "ai:capabilities": [
+      "tools"
+    ]
+  }
+}

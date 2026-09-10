@@ -1,0 +1,8 @@
+{
+  "autoupdate:channel": "latest",
+  "conn:askbeforewshinstall": false,
+  "term:fontfamily": "'ZedMono Nerd Font Mono','D2Coding'",
+  "term:fontsize": 16,
+  "editor:fontfamily": "'ZedMono Nerd Font Mono','D2Coding'",
+  "editor:fontsize": 16
+}
