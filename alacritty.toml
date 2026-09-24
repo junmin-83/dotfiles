@@ -1,27 +1,27 @@
+[general]
+import = [
+    # "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\tokyo_night.toml",
+    "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\catppuccin-mocha.toml",
+    # "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\everforest_dark.toml",
+]
+working_directory = "D:\\Project"
+
 [terminal]
-shell = { program = "pwsh.exe" , args = ["-NoLogo", "-NoExit", "-Command", "Invoke-Expression (& { $PROFILE })"] }
+shell = { program = "pwsh.exe", args = ["-NoLogo"] }
 
 [font]
 normal = { family = "ZedMono Nerd Font", style = "Regular" }
 bold = { family = "ZedMono Nerd Font", style = "Bold" }
 italic = { family = "ZedMono Nerd Font", style = "Italic" }
 bold_italic = { family = "ZedMono Nerd Font", style = "Bold Italic" }
-size = 13.0
-
-[general]
-import = [
-#    "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\tokyo_night.toml"
-    "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\catppuccin-mocha.toml"
-#    "c:\\Users\\junmi\\AppData\\Roaming\\Alacritty\\themes\\themes\\everforest_dark.toml"
-]
-working_directory = "d:\\Project\\"
+size = 12.0
 
 [window]
 dimensions = { columns = 120, lines = 35 }
 padding = { x = 6, y = 6 }
 dynamic_padding = true
 decorations = "Full"
-opacity = 0.97
+opacity = 1.0
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }
@@ -37,13 +37,14 @@ bindings = [
     { key = "C", mods = "Control|Shift", action = "Copy" },
     { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
     { key = "F11", action = "ToggleFullscreen" },
-    { key = "Space", mods = "Control|Shift", action = "ToggleViMode" }
+    { key = "Space", mods = "Control|Shift", action = "ToggleViMode" },
 ]
 
 [mouse]
 hide_when_typing = false
 
 [selection]
-# 마우스 이벤트 캡처 앱(herdr, tmux, vim 등)이 활성화되었을 때 우선 전달하도록 보장
 save_to_clipboard = false
 
+[hints]
+enabled = []
