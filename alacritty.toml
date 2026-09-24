@@ -19,7 +19,7 @@ size = 12.0
 [window]
 dimensions = { columns = 120, lines = 35 }
 padding = { x = 6, y = 6 }
-dynamic_padding = true
+dynamic_padding = false
 decorations = "Full"
 opacity = 1.0
 
@@ -37,7 +37,7 @@ bindings = [
     { key = "C", mods = "Control|Shift", action = "Copy" },
     { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
     { key = "F11", action = "ToggleFullscreen" },
-    { key = "Space", mods = "Control|Shift", action = "ToggleViMode" },
+    { key = "F5", chars = "\x1b[?1000h\x1b[?1002h\x1b[?1006h" },
 ]
 
 [mouse]
