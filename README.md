@@ -65,3 +65,15 @@ PowerShell 프로필을 열려면 다음 명령을 실행하세요.
 ```powershell
 notepad $PROFILE
 ```
+
+## Windows Terminal Font 설정
+
+```powershell
+if ($env:WT_INSTALL_ROOT -and (Test-Path "$env:WT_INSTALL_ROOT\shell-integration\pwsh\wave-shell-integration.ps1")) {
+    . "$env:WT_INSTALL_ROOT\shell-integration\pwsh\wave-shell-integration.ps1"
+}
+```
+
+```powershell
+"ZedMono Nerd Font"
+```
