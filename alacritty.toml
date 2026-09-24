@@ -37,7 +37,7 @@ bindings = [
     { key = "C", mods = "Control|Shift", action = "Copy" },
     { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
     { key = "F11", action = "ToggleFullscreen" },
-    { key = "F5", text = "\u001b[?1000h\u001b[?1002h\u001b[?1006h" },
+    { key = "F5", chars = "\u001b[?1000h\u001b[?1002h\u001b[?1006h" },
 ]
 
 [mouse]
