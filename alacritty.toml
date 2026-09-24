@@ -37,7 +37,7 @@ bindings = [
     { key = "C", mods = "Control|Shift", action = "Copy" },
     { key = "N", mods = "Control|Shift", action = "SpawnNewInstance" },
     { key = "F11", action = "ToggleFullscreen" },
-    { key = "F5", command = { program = "herdr.exe", args = ["server", "reload-config"] } },
+    { key = "Space", mods = "Control|Shift", action = "ToggleViMode" },
 ]
 
 [mouse]
